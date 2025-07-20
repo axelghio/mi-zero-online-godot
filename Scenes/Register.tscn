@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://difx6kmd06md7"]
+
+[ext_resource type="FontFile" uid="uid://bgvgyevuf635l" path="res://Font/Orbitron-VariableFont_wght.ttf" id="1_vvf7j"]
+[ext_resource type="Texture2D" uid="uid://dnye0osj8iv6v" path="res://Images/my-proyect-bg-login-v2.png" id="2_l7wxi"]
+[ext_resource type="Script" uid="uid://fgt3qwyw35kg" path="res://Scripts/Register.gd" id="2_xrhn0"]
+[ext_resource type="Script" uid="uid://cb4yvmcqhhyci" path="res://Scripts/PassLine.gd" id="3_xrhn0"]
+[ext_resource type="Texture2D" uid="uid://nbm66c574sq4" path="res://Ico/eye_open.png" id="4_s66x5"]
+[ext_resource type="Texture2D" uid="uid://bd8qb8mc6pf7u" path="res://Ico/eye_close.png" id="5_6mmjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhoxy"]
+
+[sub_resource type="Theme" id="Theme_a6huy"]
+default_font = ExtResource("1_vvf7j")
+default_font_size = 20
+font/base_type = &"Tree"
+font/colors/colors = Color(0.545098, 0.27451, 0.854902, 1)
+font/font_sizes/24 = 18
+font/fonts/leter = ExtResource("1_vvf7j")
+font/styles/color = SubResource("StyleBoxFlat_bhoxy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1baen"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.180392, 0.0470588, 0.184314, 0.32549)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Register" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a6huy")
+script = ExtResource("2_xrhn0")
+
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l7wxi")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="PanelBox" type="Panel" parent="."]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.0
+offset_top = -224.0
+offset_right = -26.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1baen")
+
+[node name="Box" type="VBoxContainer" parent="PanelBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -122.0
+offset_right = 150.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="UserLine" type="LineEdit" parent="PanelBox/Box"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.92549, 0.792157, 0.160784, 1)
+theme_override_colors/font_color = Color(0.92549, 0.792157, 0.160784, 1)
+placeholder_text = "Usuario"
+alignment = 1
+
+[node name="PassLine" type="LineEdit" parent="PanelBox/Box"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.92549, 0.792157, 0.160784, 1)
+theme_override_colors/font_color = Color(0.92549, 0.792157, 0.160784, 1)
+placeholder_text = "Contraseña"
+alignment = 1
+secret = true
+secret_character = "*"
+script = ExtResource("3_xrhn0")
+eye_open = ExtResource("4_s66x5")
+eye_closed = ExtResource("5_6mmjw")
+
+[node name="PassLine2" type="LineEdit" parent="PanelBox/Box"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.92549, 0.792157, 0.160784, 1)
+theme_override_colors/font_color = Color(0.92549, 0.792157, 0.160784, 1)
+placeholder_text = "Repetir Contraseña"
+alignment = 1
+secret = true
+secret_character = "*"
+script = ExtResource("3_xrhn0")
+eye_open = ExtResource("4_s66x5")
+eye_closed = ExtResource("5_6mmjw")
+
+[node name="BtnRow" type="HBoxContainer" parent="PanelBox/Box"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BtnRegister" type="Button" parent="PanelBox/Box/BtnRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.792157, 0.160784, 1)
+text = "Registrarse
+"
+
+[node name="BtnBack" type="Button" parent="PanelBox/Box/BtnRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.792157, 0.160784, 1)
+text = "Volver
+"
+
+[node name="ErrorLabel" type="Label" parent="PanelBox/Box"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.0313726, 0.160784, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

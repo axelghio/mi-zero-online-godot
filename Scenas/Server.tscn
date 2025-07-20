@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdgd680qoakwd"]
+
+[ext_resource type="Script" uid="uid://bu1m7dak0sam8" path="res://Scripts/Server.gd" id="1_fkddr"]
+[ext_resource type="PackedScene" uid="uid://c475d5avkwjc6" path="res://Scenas/ConsoleUI.tscn" id="2_bcham"]
+
+[node name="ServerRoot" type="Node3D"]
+script = ExtResource("1_fkddr")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_bcham")]

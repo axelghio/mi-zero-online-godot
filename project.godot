@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GodotNavExample"
+run/main_scene="uid://ckjxah02b5otu"
+config/features=PackedStringArray("4.4")
+
+[autoload]
+
+DatosPersonaje="*res://Scripts/datos_personaje.gd"
+Net="*res://Scripts/Net.gd"
+Console="*res://Scripts/Console.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
